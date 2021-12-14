@@ -1,0 +1,86 @@
+:root {
+  --theme-bg-color: #f4f6f4;
+  --theme-color: #000;
+  --overlay-bg: rgb(255 255 255 / 30%);
+  --border-color: rgb(255 255 255 / 35%);
+  --scrollbar-bg: rgb(255 253 253 / 57%);
+  --navbar-color: white;
+  --default-color: #1b9f36;
+}
+
+// sidebar
+
+$submenu-bg-color: #f4f6f4;
+$submenu-bg-color-collapsed: white;
+
+$sidebar-bg-color: white;
+$highlight-color: #1b9f36;
+
+$icon-bg-color: transparent;
+
+$breakpoint-md: 820px;
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+  border-bottom: none;
+}
+
+.collapse-sidebar {
+  position: fixed;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 2;
+  top: 20px;
+  color: #adadad;
+  &:focus {
+    outline: none;
+  }
+}
+
+// navbar
+
+.navbar-light {
+  background: var(--navbar-color);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content-wrapper {
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 56px 20px 0px 20px;
+  height: 100%;
+  margin-left: 0;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+  &-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 14px;
+    padding: 20px 40px;
+    @media screen and (max-width: 415px) {
+      padding: 20px;
+    }
+  }
+  &.overlay {
+    pointer-events: none;
+    transition: 0.3s;
+    background-color: var(--overlay-bg);
+  }
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
